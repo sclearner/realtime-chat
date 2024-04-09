@@ -1,0 +1,131 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: snow;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: lightgreen;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(104, 194, 104);
+}
+
+* {
+    text-wrap: pretty;
+}
+
+body {
+    display: flex;
+    flex-direction: initial;
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    background-color: snow;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100vh;
+}
+
+
+nav {
+    max-width: 350px;
+    width: 5vw;
+    min-width: 250px;
+    background-color: lightgreen;
+}
+
+header {
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        flex-direction: column;
+        
+    }
+
+    nav {
+        height: 100px;
+        background-color: lightgreen;
+        width: 100vw;
+        max-width: none;
+    }
+}
+
+#messages-container {
+    flex: 1;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+#form {
+    display: flex;
+    padding: 10px 10px 10px 10px;
+    background-color: lightgreen;
+
+    #yourname {
+        margin-right: 10px;
+        font-size: 24px;
+    }
+
+    #input {
+        flex: 1 0 auto;
+        margin-right: 5px;
+    }
+}
+
+#messages {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 5px;
+
+    li {
+        position: relative;
+        min-height: 40px;
+    }
+
+    li div {
+        float: left;
+        max-width: 40vw;
+        border-radius: 10px 10px 10px 0px;
+        padding: 10px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    li:has(.server-notification) {
+        min-height: fit-content;
+    }
+
+    .my-message {
+        float: right;
+        background-color: lightgreen;
+        border-radius: 10px 10px 0px 10px;
+    }
+
+    .server-notification {
+        float: none;
+        text-align: center;
+        left: 0;
+        right: 0;
+        max-width: 100%;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0px;
+    }
+}

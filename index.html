@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Socket.IO chat</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <nav id="user-list">
+      <header>Chat</header>
+      <select id="users"></select>
+    </nav>
+    <main>
+      <div id="messages-container">
+        <ul id="messages"></ul>
+      </div>
+      <form id="form" action="">
+        <h1 id="yourname"></h1>
+        <input id="input" autocomplete="off"></input>
+        <button class="btn btn-success">
+          <i class="fa fa-paper-plane"></i>
+        </button>
+      </form>
+    </main>
+    <audio id="sound">
+      <source src="sound.mp3" />
+    </audio>
+  </body>
+
+  <script src="socket.io.min.js"></script>
+  <script src="client.js"></script>
+</html>
