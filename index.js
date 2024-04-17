@@ -5,7 +5,7 @@ import fs from 'fs';
 import {resolve} from 'path';
 import {networkInterfaces} from 'os'
 import { faker } from "@faker-js/faker";
-import { exec } from "child_process";
+import { execSync } from "child_process";
 
 //ip config
 let en0;
@@ -16,7 +16,7 @@ catch (_e) {
   en0 = 'localhost';
 }
 
-await exec(`mkcert ${en0}`);
+execSync(`mkcert ${en0}`);
 
 const app = express();
 const http = createServer({
